@@ -1,103 +1,22 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#111827" />
-  <title>Perfect Profile — Theme Level Preview</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#172033"><title>Perfect Profile — Spatial Clue Preview</title><link rel="stylesheet" href="style.css"></head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-mark">PP</div>
-        <div><h1>Theme Level Preview</h1><p>Perfect Profile · 10 chapters · 100 levels</p></div>
-      </div>
-      <div class="top-actions">
-        <button class="ghost" id="exportBtn">Export progress</button>
-        <label class="ghost file-btn">Import progress<input id="importInput" type="file" accept="application/json" /></label>
-        <button class="primary" id="copyLinkBtn">Copy level link</button>
-      </div>
-    </header>
-
-    <section class="toolbar">
-      <div class="level-nav">
-        <button class="icon-btn" id="prevBtn" aria-label="Previous level">←</button>
-        <div class="select-wrap"><label for="levelSelect">Level</label><select id="levelSelect"></select></div>
-        <button class="icon-btn" id="nextBtn" aria-label="Next level">→</button>
-      </div>
-      <div class="select-wrap theme-wrap"><label for="themeSelect">Chapter / theme</label><select id="themeSelect"><option value="">All themes</option></select></div>
-      <div class="search-wrap"><span>⌕</span><input id="levelSearch" placeholder="Search level, theme, title, subject…" /></div>
-      <div class="toolbar-status"><span id="roleBadge" class="badge"></span><span id="solutionBadge" class="badge full">Unique solution</span></div>
-    </section>
-
-    <main class="workspace">
-      <aside class="panel clues-panel">
-        <div class="panel-head"><div><span class="eyebrow">Investigation clues</span><h2 id="clueTitle">Clues</h2></div><span id="clueCount" class="count-pill">0</span></div>
-        <section class="case-card">
-          <span id="caseTheme" class="case-theme"></span>
-          <h3 id="caseTitle"></h3>
-          <p id="caseQuestion"></p>
-          <div class="chapter-story" id="chapterStory"></div>
-        </section>
-        <div class="clue-tools">
-          <label class="switch-row compact-switch"><span>Show deduction flow</span><input type="checkbox" id="showFlow"><i></i></label>
-        </div>
-        <div id="clueList" class="clue-list"></div>
-      </aside>
-
-      <section class="preview-stage">
-        <div class="device-frame">
-          <div class="device-notch"></div>
-          <div class="game-screen">
-            <div class="game-header">
-              <button class="round-btn" aria-label="Home">⌂</button>
-              <div class="level-heading"><span id="gameLevel">LEVEL 1</span><strong id="gameCategory">School Secrets</strong><small id="gameCaseTitle"></small></div>
-              <button class="round-btn" aria-label="Settings">⚙</button>
-            </div>
-            <div class="progress-track"><div id="progressBar"></div></div>
-            <div class="question-card"><span>CASE QUESTION</span><strong id="gameQuestion"></strong></div>
-            <div class="instruction">Select a cell, then choose or drag the correct value</div>
-            <div id="profileGrid" class="profile-grid"></div>
-            <div class="value-tray">
-              <div class="tray-head"><div><span class="eyebrow">Selected field</span><strong id="selectedField">Choose a cell</strong></div><button id="clearCellBtn" class="mini-btn">Clear cell</button></div>
-              <div id="valuePool" class="value-pool"></div>
-            </div>
-            <div id="resultBanner" class="result-banner"></div>
-            <div id="revealCard" class="reveal-card"><span>CASE REVEAL</span><strong id="revealText"></strong></div>
-            <div class="game-actions"><button id="resetBtn" class="secondary">Reset</button><button id="checkBtn" class="primary wide">Check level</button></div>
-          </div>
-        </div>
-      </section>
-
-      <aside class="panel inspector-panel">
-        <div class="panel-head"><div><span class="eyebrow">Level QA</span><h2>Inspector</h2></div></div>
-        <div class="stats-grid" id="statsGrid"></div>
-        <div class="control-section">
-          <h3>Display</h3>
-          <label class="switch-row"><span>Show cell IDs</span><input type="checkbox" id="showIds"><i></i></label>
-          <label class="switch-row"><span>Compact grid</span><input type="checkbox" id="compactGrid"><i></i></label>
-          <label class="switch-row"><span>Highlight answer cells</span><input type="checkbox" id="highlightKnown"><i></i></label>
-          <label class="switch-row"><span>Allow repeated values</span><input type="checkbox" id="allowRepeats"><i></i></label>
-        </div>
-        <div class="control-section">
-          <h3>Testing</h3>
-          <button id="revealBtn" class="secondary full">Reveal full solution</button>
-          <button id="clearProgressBtn" class="text-btn full">Clear all saved progress</button>
-        </div>
-        <div class="control-section">
-          <h3>Level metadata</h3>
-          <dl class="meta-list" id="metaList"></dl>
-        </div>
-        <div class="control-section">
-          <h3>Art scope</h3>
-          <dl class="meta-list" id="artList"></dl>
-        </div>
-      </aside>
-    </main>
-  </div>
-  <div id="toast" class="toast"></div>
-  <script src="app.js"></script>
-</body>
-</html>
+<div class="app-shell">
+<header class="topbar"><div class="brand"><div class="brand-mark">PP</div><div><h1>Level Preview · Progressive Clues</h1><p>100 themed levels · immediate right/wrong validation · reveal state machine</p></div></div><div class="top-actions"><button class="ghost" id="exportBtn">Export progress</button><label class="ghost file-btn">Import<input id="importInput" type="file" accept="application/json"></label><button class="primary" id="copyLinkBtn">Copy level link</button></div></header>
+<section class="toolbar"><div class="level-nav"><button class="icon-btn" id="prevBtn">←</button><div class="select-wrap"><label>Level</label><select id="levelSelect"></select></div><button class="icon-btn" id="nextBtn">→</button></div><div class="select-wrap theme-wrap"><label>Chapter / theme</label><select id="themeSelect"><option value="">All themes</option></select></div><div class="search-wrap"><span>⌕</span><input id="levelSearch" placeholder="Search level, title, field, subject…"></div><div class="toolbar-status"><span id="roleBadge" class="badge"></span><span id="solutionBadge" class="badge full"></span></div></section>
+<main class="workspace">
+<aside class="panel clues-panel"><div class="panel-head"><div><span class="eyebrow">Clue state machine</span><h2 id="clueTitle">Clues</h2></div><span id="clueCountSide" class="count-pill">0/0</span></div><section class="case-card"><span id="caseTheme" class="case-theme"></span><h3 id="caseTitle"></h3><p id="caseQuestion"></p><div id="chapterStory" class="chapter-story"></div></section><div class="clue-tools"><label class="switch-row compact-switch"><span>Show machine conditions</span><input type="checkbox" id="showFlow"><i></i></label><div class="legend"><span class="dot active"></span>Active <span class="dot done"></span>Completed <span class="dot locked"></span>Hidden</div></div><div id="clueList" class="clue-list"></div></aside>
+<section class="preview-stage"><div class="device-frame"><div class="device-notch"></div><div class="game-screen">
+<div class="game-header"><button class="round-btn">☰</button><div class="level-heading"><span id="gameLevel"></span><strong id="gameCategory"></strong><small id="gameCaseTitle"></small></div><div class="hud"><span id="coinHud">◉ 1000</span><span id="livesHud"></span></div></div>
+<div class="question-card"><span>CASE QUESTION</span><strong id="gameQuestion"></strong></div>
+<div id="profileGrid" class="profile-grid"></div>
+<div class="game-status-row"><div class="clue-progress"><span>🧩</span><strong id="gameClueCount">Clues: 0/0</strong></div><button id="hintBtn" class="tool-btn">💡 <b>2</b></button><button id="eraseBtn" class="tool-btn">🧽 <b>2</b></button></div>
+<div id="gameClueTray" class="game-clue-tray"></div>
+<div class="value-tray"><div class="tray-head"><div><span class="eyebrow">Selected field</span><strong id="selectedField">Choose a cell</strong></div><button id="clearCellBtn" class="mini-btn">Clear</button></div><div id="valuePool" class="value-pool"></div></div>
+<div id="resultBanner" class="result-banner"></div><div class="game-actions"><button id="resetBtn" class="secondary">Reset level</button><button id="checkBtn" class="primary wide">QA check</button></div>
+</div></div></section>
+<aside class="panel inspector-panel"><div class="panel-head"><div><span class="eyebrow">Runtime QA</span><h2>Inspector</h2></div></div><div class="stats-grid" id="statsGrid"></div><div class="control-section"><h3>Display & simulation</h3><label class="switch-row"><span>Show cell IDs</span><input type="checkbox" id="showIds"><i></i></label><label class="switch-row"><span>Compact grid</span><input type="checkbox" id="compactGrid"><i></i></label><label class="switch-row"><span>Show all clue cards</span><input type="checkbox" id="showAllCards"><i></i></label><label class="switch-row"><span>Auto-open new clue popup</span><input type="checkbox" id="autoPopup" checked><i></i></label></div><div class="control-section"><h3>Testing</h3><button id="manualRevealBtn" class="secondary full">Unlock next clue</button><button id="revealBtn" class="secondary full">Auto-fill full solution</button><button id="clearProgressBtn" class="text-btn full">Clear all saved progress</button></div><div class="control-section"><h3>Event log</h3><div id="eventLog" class="event-log"></div></div><div class="control-section"><h3>Level metadata</h3><dl class="meta-list" id="metaList"></dl></div></aside>
+</main></div>
+<div id="toast" class="toast"></div>
+<div id="modalLayer" class="modal-layer" aria-hidden="true"><div id="modalCard" class="modal-card"></div></div>
+<script src="app.js"></script></body></html>
